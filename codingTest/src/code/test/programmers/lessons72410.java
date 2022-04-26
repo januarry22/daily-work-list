@@ -34,7 +34,6 @@ public class lessons72410 {
     public static String solution(String checkString){
         // 1단계 : 대문자 -> 소문자 치환
         String lowerReplace = checkString.toLowerCase();
-        System.out.print("1:::"+lowerReplace+"\n");
 
         // 2단계
         lowerReplace = lowerReplace.replaceAll("[^a-z0-9-_.]","");
