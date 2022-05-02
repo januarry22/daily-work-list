@@ -8,7 +8,7 @@ public class lessons92334 {
     public static String id_list[] = {"muzi", "frodo", "apeach", "neo"};
     // "이용자id 신고한id"형태의 문자열
     public static String report[] = {"muzi frodo","apeach frodo","frodo neo","muzi neo","apeach muzi"};
-    // 정지되는 신고 회수 기준
+    // 정지되는 신고 회수 기준 2 1 1 0
     public static Integer k = 2;
 
     public static void main(String[] args){
@@ -30,18 +30,31 @@ public class lessons92334 {
 
         for(String reports : report){
             String[] newid = reports.split(" ");
-            String sign = newid[0];
-            String signed = newid[1];
-            List fromsigned = (List) resultMap.get(sign);
-            fromsigned.add(signed);
-            longMap.put(sign,fromsigned.size());
-        }
-        int[] result = new int[id_list.length];
-        for(int i=0; i<result.length;i++){
-            result[i] = longMap.get(id_list[i]);
+            String toSign = newid[0];
+            String fromSign = newid[1];
+
+            List fromsignedList = (List) resultMap.get(toSign);
+            fromsignedList.add(fromSign);
+            System.out.print("fromsignedList"+resultMap+"\n");
+
+            if(fromsignedList.contains(fromSign)){
+                int i=0;
+                i++;
+                longMap.put(fromSign,i);
+            }
         }
 
+        System.out.print("toSign"+longMap+"\n");
+//        int j=0;
+        int[] result = new int[id_list.length];
+//        for(int j=0; j<result.length;j++){
+//            List fromsigned =  (List)resultMap.get(id_list[i]);
+//
+//            longMap.put(id_list[i],j);
+//        }
+
         return result;
+
     }
 
 }
