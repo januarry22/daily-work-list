@@ -13,28 +13,35 @@ public class lessons92334 {
 
     public static void main(String[] args){
         int[] isCheck = solution(id_list,report,k);
+        for(int j : isCheck){
+            System.out.print("isCheck"+j);
+        }
     }
 
     public static int[] solution(String[] id_list, String[] report, int k) {
-        int[] answer = {};
-        Map<String,Object> map = new HashMap<>();
-        Map<String, Integer> idxMap = new HashMap<>();
+        Map<String,Object> resultMap = new HashMap<>();
+        Map<String, Integer> longMap = new HashMap<>();
 
         for(String ids : id_list){
             List news = new ArrayList();
-            map.put(ids, news);
+            resultMap.put(ids, news);
+            longMap.put(ids,0);
         }
+
         for(String reports : report){
             String[] newid = reports.split(" ");
-            if(newid[0]==map.get(newid[0])){
-                List newd = new ArrayList();
-                newd.add(newid[1]);
-                map.get(newid[0]);
-            }
+            String sign = newid[0];
+            String signed = newid[1];
+            List fromsigned = (List) resultMap.get(sign);
+            fromsigned.add(signed);
+            longMap.put(sign,fromsigned.size());
         }
-        System.out.print("Dddddd"+map);
+        int[] result = new int[id_list.length];
+        for(int i=0; i<result.length;i++){
+            result[i] = longMap.get(id_list[i]);
+        }
 
-        return answer;
+        return result;
     }
 
 }
