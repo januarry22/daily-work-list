@@ -134,3 +134,22 @@ mysql> show databases;
 - 도커 대시보드 확인
 
 ![스크린샷 2022-05-02 오후 1.07.12.png](Mac%20%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5%20Docker%20%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%92%E1%85%AA%E1%86%AB%E1%84%80%E1%85%A7%E1%86%BC%2027a8a66025f647f7b5b79c50199b49b9/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-05-02_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1.07.12.png)
+
+## Nginx 설치
+
+```bash
+docker pull nginx 
+// latest 버전으로 다운로드됨
+
+docker images
+// 다운로드된 도커 이미지확인
+
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+ubuntu       20.04     53df61775e88   3 days ago    72.8MB
+nginx        latest    fa5269854a5e   12 days ago   142MB
+mysql        8.0.17    b8fd9553f1f0   2 years ago   445MB
+
+docker run -d --name web_engine -p 80:80 nginx
+// host 80 포트와 도커 이미지 80 포트 사용
+// 컨테이너명은 web_engine
+```
