@@ -25,7 +25,9 @@ docker run ubuntu:20.04
 ```
 
 ```bash
-docker run --restart always --name ubuntu_20.04 -dt ubuntu:20.04
+docker run -dit -p 2000:22 --name ubuntu20 ubuntu:20.04
+docker run -dit -p [host port]:[container port] --name [container명] [docker image]
+
 // 다운로드 한 이미지로 도커 컨테이너 생성 
 ```
 
@@ -37,8 +39,9 @@ docker ps
 ![스크린샷 2022-05-02 오전 10.53.11.png](Mac%20%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5%20Docker%20%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%92%E1%85%AA%E1%86%AB%E1%84%80%E1%85%A7%E1%86%BC%2027a8a66025f647f7b5b79c50199b49b9/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-05-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_10.53.11.png)
 
 ```bash
-docker exec -it ubuntu_20.04 /bin/bash 
+docker exec -it ubuntu20 /bin/bash 
 // 도커 실행 
+docker attach ubuntu20     // 도커 실행 [컨테이너명]
 ```
 
 ![스크린샷 2022-05-02 오전 10.55.49.png](Mac%20%E1%84%8B%E1%85%A6%E1%84%89%E1%85%A5%20Docker%20%E1%84%8F%E1%85%A5%E1%86%AB%E1%84%90%E1%85%A6%E1%84%8B%E1%85%B5%E1%84%82%E1%85%A5%20%E1%84%80%E1%85%A2%E1%84%87%E1%85%A1%E1%86%AF%E1%84%92%E1%85%AA%E1%86%AB%E1%84%80%E1%85%A7%E1%86%BC%2027a8a66025f647f7b5b79c50199b49b9/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2022-05-02_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_10.55.49.png)
