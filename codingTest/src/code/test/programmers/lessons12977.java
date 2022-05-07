@@ -1,7 +1,7 @@
 package code.test.programmers;
 
 /*
-* [프로그래머스] - 없는 숫자 더하기
+* [프로그래머스] - 소수 만들기
 * */
 public class lessons12977 {
     public static int[] nums = {1,2,3,4};
