@@ -27,6 +27,7 @@ public class lessons12977 {
                 }
             }
         }
+        System.out.print("nums flag " + flag + "\n");
         return flag;
     }
 }
