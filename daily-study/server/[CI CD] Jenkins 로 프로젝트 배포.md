@@ -38,3 +38,26 @@
 - 빌드 유발
     
     **GitHub hook trigger for GITScm polling 체크 하면 Commit 하면 프로젝트가 배포됨**
+    
+
+<aside>
+💡 Github Webhook 설정
+
+</aside>
+
+- Git
+    
+    Git Repository → Setting →Webhooks
+    
+    - **Payload URL**: {{jenkins url}}/github-webhook/
+    - **Content type :**  application/json
+    - 이벤트 여부 설정
+    
+- Jenkins
+    
+    Jenkins → Jenkins관리 → 시스템 설정 → GitHub 탭 → **Add GitHub Server**
+    
+    - **Name** : 임의로 설정 
+    - **API URL :** [https://api.github.com](https://api.github.com/)
+    - **Credentials : 추가된 git access token 세팅**
+    - **Manage hooks : 체크**
