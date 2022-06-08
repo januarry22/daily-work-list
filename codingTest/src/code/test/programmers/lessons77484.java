@@ -34,12 +34,12 @@ public class lessons77484 {
             }
         }
 
-        System.out.print("최소로 나올수 있는 맞힌 수"+sumSet+"\n");
-        System.out.print("최대로 나올수 있는 맞힌 수"+(sumSet+unknownSet)+"\n");
 
-        answer[0] = returnValue(sumSet);
-        answer[1] = returnValue(sumSet+unknownSet);
+        answer[0] = returnValue(sumSet+unknownSet);
+        answer[1] = returnValue(sumSet);
 
+        System.out.print("최소로 나올수 있는 맞힌 수"+answer[0]+"\n");
+        System.out.print("최대로 나올수 있는 맞힌 수"+ answer[1]+"\n");
         return answer;
     }
 
@@ -48,16 +48,21 @@ public class lessons77484 {
         switch (setvalue){
             case 6:
                 setvalue = 1;
+                break;
             case 5:
                 setvalue = 2;
+                break;
             case 4:
                 setvalue = 3;
+                break;
             case 3:
                 setvalue = 4;
+                break;
             case 2:
                 setvalue = 5;
+                break;
             default:
-                setvalue =6;
+                setvalue = 6;
             break;
         }
 
