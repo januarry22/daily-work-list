@@ -1,8 +1,6 @@
 package code.test.programmers;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /*
 * [프로그래머스] - 실패율
@@ -20,7 +18,7 @@ public class lessons42889 {
     public static int[] solution(int N, int[] stages) {
         int answer[] = new int[N+1];
         double doubleArray[] = new double[N+1];
-        Map<Integer,Double> resultMap = new HashMap<>();
+        Map<Integer,Double> resultMap = new HashMap<Integer,Double>();
 
         Arrays.sort(stages);
 
@@ -33,14 +31,15 @@ public class lessons42889 {
                 }
             }
             double nextLength = stages.length-failMinusCnt;
-            doubleArray[i] = failCnt/nextLength;
-       //     double result = failCnt/nextLength;
+          //  doubleArray[i] = failCnt/nextLength;
+            double result = failCnt/nextLength;
             failMinusCnt += failCnt;
-            System.out.println(failCnt);
-            System.out.println( nextLength);
-            System.out.println( failCnt +"/"+nextLength +"="+doubleArray[i]);
-            System.out.println( "");
+            resultMap.put(i,result);
         }
+        List<Integer> listKeySet = new ArrayList<>(resultMap.keySet());
+        Collections.sort(listKeySet, (value1, value2) -> (resultMap.get(value2).compareTo(resultMap.get(value1))));
+
+        answer = listKeySet.stream().mapToInt(i -> i).toArray();
 
         return answer;
     }
