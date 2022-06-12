@@ -6,8 +6,8 @@ import java.util.*;
 * [프로그래머스] - 실패율
 * */
 public class lessons42889 {
-    public static int N = 5;
-    public static int[] stages={2, 1, 2, 6, 2, 4, 3, 3};
+    public static int N = 4;
+    public static int[] stages={4,4,4,4,4};
 
     public static void main(String[] args){
         int answer[] = solution(N, stages);
