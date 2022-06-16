@@ -18,9 +18,7 @@ public class lessons86491 {
         int answer=0;
 
         for(int i =0; i<sizes.length; i++){
-            if(sizes[i][0] < sizes[0][i]){
 
-            }
         }
 
         return answer;
