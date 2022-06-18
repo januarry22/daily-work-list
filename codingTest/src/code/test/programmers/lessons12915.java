@@ -24,6 +24,10 @@ public class lessons12915 {
         }
         Arrays.sort(strings.);
 
+        for(String str : strings){
+            char getString = str.charAt(N);
+            System.out.println(getString);
+        }
 
         return answer;
     }
