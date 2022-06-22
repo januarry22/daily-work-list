@@ -22,12 +22,8 @@ public class lessons12915 {
             char getString = str.charAt(N);
             System.out.println(getString);
         }
-        Arrays.sort(strings.);
+       // Arrays.sort();
 
-        for(String str : strings){
-            char getString = str.charAt(N);
-            System.out.println(getString);
-        }
 
         return answer;
     }
