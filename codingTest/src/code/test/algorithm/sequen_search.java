@@ -16,9 +16,14 @@ public class sequen_search {
 
     static int sequenSearch(int key) {
 
-        for(int i = 0; i<arr.length; i++){
-            if (key == arr[i]){
-                return i;
+//        for(int i = 0; i<arr.length; i++){
+//            if (key == arr[i]){
+//                return i;
+//            }
+//        }
+        for(int a : arr){
+            if (key == a){
+                return a;
             }
         }
         return -1;
