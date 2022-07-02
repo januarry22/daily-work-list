@@ -4,3 +4,6 @@ codingTest/.idea/
 codingTest/codingTest.iml
 codingTest/out/
 
+.DS_Store
+codingTest/.DS_Store
+codingTest/programmers/.DS_Store
