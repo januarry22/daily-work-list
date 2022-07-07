@@ -1,7 +1,7 @@
 package code.test.baekjoon;
 
 /*
- * 백준 - 보너스 점수
+ * 백준 - 보너스 점
  * */
 public class problem17389 {
 
@@ -22,14 +22,13 @@ public class problem17389 {
         int score = 0;
         for(int i = 0; i<str.length(); i++){
                if(str.charAt(i)=='O'){
-                   score = (i+1);
-                   result = score + bonus;
+                   score = (i+1)+bonus;
                    bonus++;
                }else{
                    bonus = 0;
-                   result = 0;
+                   score = 0;
                }
-            sum+=result;
+            sum+=score;
         }
 
         System.out.println(sum);
