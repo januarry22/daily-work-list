@@ -1,9 +1,9 @@
-# 스택 & 큐
+# 스택 (Stack)
 
 # **스택 (Stack)**
 
 - 데이터를 제한적으로 접근할 수 있는 구조
-    - 한쪽 끝에서만 자료를 넣거나 뺄 수 있는 구조
+    - 한쪽 끝에서만 자료를 넣거나 뺄 수 있는 구조 (LIFO
 - 가장 나중에 쌓은 데이터를 가장 먼저 빼낼 수 있는 데이터 구조
 
 ## **1. 스택 구조**
@@ -22,9 +22,43 @@
 ### 2. 스택 구조와 프로세스 스택
 
 - 스택 구조는 프로세스 실행 구조의 가장 기본
-    - 함수 호출시 프로세스 실행 구조를 스택과 비교해서 이해 필료
+    - 함수 호출시 프로세스 실행 구조를 스택과 비교해서 이해 필요
+    
 
-### 3. 스택의 장단점
+### 3. 구현
+
+```jsx
+
+import java.util.Stack;
+
+/*
+* JAVA 배열
+* */
+public class stack {
+    public static void main(String[] args){
+        Stack<String> stack = new Stack<>();
+
+        stack.push("itme::1");
+        stack.push("itme::2");
+        stack.push("itme::3");
+
+        System.out.println(stack);
+
+        System.out.println(stack.peek());   
+				// stack 최상단 값 -> item3
+
+        System.out.println(stack.pop());   
+				// stack 최상단 값이 꺼내짐 -> item3
+        
+        System.out.println(stack.peek());   
+				// item3이 pop()되었으므로 item2가 peek가 됨.
+
+    }
+
+}
+```
+
+### 4. 스택의 장단점
 
 ```
 - 장점
@@ -33,16 +67,4 @@
 - 단점 (일반적인 스택 구현시)
     - 데이터 최대 갯수를 미리 정해야한다.
 		- 미리 최대 공간을 확보해야함
-```
-
-# **큐 (Queue)**
-
-- 줄을 서는 행위와 유사
-    - 가장 먼저 넣은 데이터를 가장 먼저 꺼낼 수 있는 구조
-
-## 1. 큐 구조
-
-```bash
-- FIFO (First-in, First-Out) 또는 LILO(Last-In, Last-Out)방식으로 스택과 꺼내는 순서가 반대
-- 멀티 태스킹을 위한 스케줄링 방식을 구현하기 위해 많이 사용
 ```
