@@ -4,12 +4,14 @@
 
 ## **1. 연결 리스트 (Linked List) 구조**
 
-- 배열은 순차적으로 연결된 공간에 데이터를 나열하는 데이터 구조
-- 연결 리스트는 떨어진 곳에 존재하는 데이터를 화살표로 연결해서 관리하는 데이터 구조
-- 본래 C언어에서는 주요한 데이터 구조이지만, 파이썬은 리스트 타입이 연결 리스트의 기능을 모두 지원
+- 노드가 데이터와 포인터를 가지고 한 줄로 연결되어 있는 방식
+- 각 데이터는 노드라 불리며 배열에서 자주 삽입, 삭제가 이루어지는 경우 용이
+    - ArrayList보다 검색의 경우에 있어서 느림
 - 연결 리스트 기본 구조
     - 노드 (Node) : 데이터 저장 단위 (데이터값, 포인터)로 구성
     - 포인터(pointer) : 각 노드 안에서, 다음이나 이전의 노드와의 연결 정보를 가지고 있는 공간
+    
+    [https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbygm8v%2Fbtq5lxMb2f7%2FUookpU9dnl1uKNZs6i4Bu0%2Fimg.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fbygm8v%2Fbtq5lxMb2f7%2FUookpU9dnl1uKNZs6i4Bu0%2Fimg.png)
     
 
 ## 2. 연결 리스트의 장단점
