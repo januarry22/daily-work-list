@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.Queue;
 
 /*
-* JAVA 트라이 
+* JAVA 트라이
 * */
 public class TrieNode {
 
