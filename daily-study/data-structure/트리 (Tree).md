@@ -168,9 +168,3 @@ public class Tree {
     - 레벨 0 부터 끝까지 순회
         - A → B → C → D → E → F → G → H → I → J
     - BFS
-
-## 이진 트리 (Binary Tree)
-
-- 각각의 노드가 최대 2명의 자식을 가지는 트리
-- 자식노드는 항상 left , right 값을 가짐
-- 두개의 트리에 같은 키 값을 가지는 자식노드가 있어도 해당 자식노드의 left , right 값이 다른 경우엔 다른 트리
