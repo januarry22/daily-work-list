@@ -2,10 +2,11 @@
 
 # 1. 이진 트리 (Binary Tree) ?
 
-- 각각의 노드가 최대 2명의 자식을 가지는 트리
+- **각각의 노드가 최대 2명**의 자식을 가지는 트리(2개 이하)
 - 자식노드는 항상 left , right 값을 가짐
-    - 왼쪽 노드는 해당 노드보다 작은 값, 오른쪽 노드는 해당 노드보다 큰 값을 가지고 있음
+    - 왼쪽 자식노드는 부모노드보다 작고, 오른쪽 자식노드는 부모노드 보다 큼
 - 두개의 트리에 같은 키 값을 가지는 자식노드가 있어도 해당 자식노드의 left , right 값이 다른 경우엔 다른 트리
+- 중복된 키 값이 없어야함
 
 # 2. 구현
 
@@ -127,17 +128,13 @@ public class BinaryTree {
 
 ### 이진 탐색 트리 삭제
 
-- **Leaf Node 삭제**
+1. **Leaf Node 삭제( 자식노드가 없는 경우)**
     - 삭제할 Node의 Parent Node가 삭제할 Node를 가리키지 않도록 한다.
-- 자식노드**가 없는 경우**
-    - 삭제할 Node의 Parent Node가 삭제할 Child Node를 가리키지 않도록 한다.
-- 자식 노드가 **(left or right) 한개인 경우**
+2. **자식 노드가 (left or right) 한개인 경우** 
     - 삭제할 노드의 자식노드를 (left, right) 에 따라 Parent Node가 가리키도록 한다.
-- 자식노드**가 두개인 경우**
-    
-     1. 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 삭제할 Node의 Parent Node가 가리키도록 한다.
-    
-    1. 삭제할 Node의 왼쪽 자식 중, 가장 큰 값을 삭제할 Node의 Parent Node가 가리키도록 한다.
+3. **자식노드가 두개인 경우** 
+    - 삭제할 Node의 오른쪽 자식 중, 가장 작은 값을 삭제할 Node의 Parent Node가 가리키도록 한다.
+    - 삭제할 Node의 왼쪽 자식 중, 가장 큰 값을 삭제할 Node의 Parent Node가 가리키도록 한다.
 
 ```java
 public boolean pop(int data) {
