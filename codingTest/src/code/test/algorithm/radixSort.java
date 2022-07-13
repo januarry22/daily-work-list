@@ -3,9 +3,9 @@ package code.test.algorithm;
 import java.util.Arrays;
 
 /*
- * JAVA 퀵 정렬 quickSort
+ * JAVA radix sort
  * */
-public class quickSort {
+public class radixSort {
     public static void main(String[] args) {
         int[] arr = {5, 2, 3, 1, 2, 4, 6};
 
