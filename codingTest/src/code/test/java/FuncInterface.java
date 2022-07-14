@@ -43,7 +43,7 @@ public class FuncInterface {
 
         Consumer<String> consumer = (str) ->  System.out.println(str);
         consumer.accept("This is Consumer<T>");
-        
+
     }
 
 
