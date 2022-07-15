@@ -10,7 +10,7 @@
 ## 2. 수행 과정
 
 1. 최대 힙(Max Heap)을 만족하도록 재구성(**heapify)**
-    - 힙은 형제노드 사이의 우선순위는 고려되지 않음. (완전정렬 상태가 아님)
+   - 힙은 형제노드 사이의 우선순위는 고려되지 않음. (완전정렬 상태가 아님)
 2. 현재 힙 루트는 가장 큰 값이 존재함. 루트의 값을 마지막 요소와 바꾼 후, 힙의 사이즈 하나 줄임
 3. 힙의 사이즈가 1보다 크면 위 과정 반복
 
@@ -34,7 +34,7 @@ public class heapSort {
 		/* maxheap 초기화 하면서 값 정렬 */
     static void heapSort(int[] arr) {
         int len = arr.length;
-        
+
         for(int i =(len/2)-1; i>=0; i--){
             heapify(arr, len, i);
         }
@@ -59,7 +59,7 @@ public class heapSort {
         if(right < len && arr[parent] < arr[right]){
             parent = right;
         }
-				// 부모노드 < 자식 노드 
+				// 부모노드 < 자식 노드
         if(n != parent){
             swap(arr, parent, n);
             heapify(arr, len, parent);
@@ -79,3 +79,6 @@ public class heapSort {
 
 - 최대 k 만큼 떨어진 요소들을 정렬 하거나
 - 최대값 혹은 최소값을 구할때 유용
+- 시간복잡도
+  - 단일 수행에서 최악의 경우 트리의 높이만큼 비용 발생 **(log₂N)**
+  - N개의 원소 만큼 반복하기 때문에 최종적으로 **O(NlogN)**
