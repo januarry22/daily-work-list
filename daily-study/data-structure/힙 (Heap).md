@@ -2,7 +2,7 @@
 
 ## 1. 힙 (Heap)이란?
 
-- 데이터에서 최대값과 최소값을 빠르게 찾기 위해 고안된 완전 이진 트리 (Complete Binary Tree)
+- 데이터에서 최대값과 최소값을 빠르게 찾기 위해 고안된 **완전 이진 트리 (Complete Binary Tree)**
     
     <aside>
     💡 완전 이진 트리
@@ -66,6 +66,22 @@
 2. 새로운 노드가 부모 노드보드 값이 클 경우, 위치를 바꿔줌 (swap)
 ```
 
+```java
+public static void insert(int x) {
+        heap.add(x);
+
+        int dep = heap.size() - 1;
+
+        while (dep > 1 && heap.get(dep / 2) < heap.get(dep)) {
+            int temp = heap.get(dep / 2);
+            heap.set(dep / 2, heap.get(dep));
+            heap.set(dep, temp);
+
+            dep = dep / 2;
+        }
+    }
+```
+
 ### 힙 삭제
 
 - **보통 삭제는 최상단 노드 (root 노드)를 삭제하는 것이 일반적**
@@ -74,7 +90,42 @@
 ```
 최대 힙(Max Heap) 일 경우 
   1. 상단의 데이터 삭제시, 가장 최하단부 왼쪽에 위치한 노드(가장 마지막에 추가한 노드)를 root노드로 이동
-  2. root 노드의 값이 child node 보다 작을 경우, root 노드의 child node 중 가장 큰 값을 가진 노드 위치를 바꿔주는 작업을 반복함 (swap
+  2. root 노드의 값이 child node 보다 작을 경우, root 노드의 child node 중 가장 큰 값을 가진 노드 위치를 바꿔주는 작업을 반복함 (swap)
+```
+
+```java
+public static void delete(){
+
+        if(heap.size()-1 <1){
+            return;
+        }
+
+        int deleted = heap.get(1);
+
+        heap.set(1, heap.get(heap.size()-1));
+        heap.remove(heap.size()-1);
+
+        int pos = 1;
+
+        while ((pos*2)<heap.size()){
+            int max = heap.get(pos * 2);
+            int maxPos = pos *2;
+            if(((pos * 2 + 1) < heap.size()) &&
+                    max < heap.get(pos * 2 + 1)) {
+                max = heap.get(pos * 2 + 1);
+                maxPos = pos * 2 + 1;
+            }
+            if(heap.get(pos) > max) {
+                break;
+            }
+
+            int temp = heap.get(pos);
+            heap.set(pos, heap.get(maxPos));
+            heap.set(maxPos, temp);
+            pos = maxPos;
+        }
+
+    }
 ```
 
 ## 4. 힙(Heap) 시간 복잡도
