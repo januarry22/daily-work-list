@@ -30,9 +30,36 @@
 ### 문제 1 : 동전 문제
 
 - 지불해야 하는 값이 4720원 일 때 1원 50원 100원, 500원 동전으로 동전의 수가 가장 적게 지불하시오.
-    - 가장 큰 동전부터 최대한 지불해야 하는 값을 채우는 방식으로 구현 가능
-    - 탐욕알고리즘으로 매순간 최적이라고 생각되는 경우를 선택하면
-    
+    - 가장 큰 동전부터 최대한 지불해야 하는 값을 채우는 방식으로 구현
+
+```java
+public static void coin(int[] arr, int total) {
+
+        int total_coin_cnt = 0;
+
+        List<Object> result = new ArrayList<>();
+
+        for (int coin : arr) {
+            Map<Integer, Integer> combi = new HashMap<>();
+						
+            int coin_cnt = total / coin;
+            total_coin_cnt += coin_cnt;
+            total -= coin * coin_cnt;
+
+            combi.put(coin, coin_cnt);
+            result.add(combi);
+        }
+
+        System.out.println(result.toString());
+        System.out.println("동전의 개수 :   "+total_coin_cnt);
+
+    }
+```
+
+- total_coin_cnt : 필요한 동전의 개수
+- 값이 제일 큰 동전으로 먼저 개수를 구함
+- 코인의 개수 * 코인값을 전체 total에서 뺌
+- 루프를 실행하며 줄어든 total에서 동전 개수를 구해나감
 
 ### 문제2 : 부분 배낭 문제 (Fractional Knapsack Problem)
 
