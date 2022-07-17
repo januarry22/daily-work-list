@@ -21,3 +21,16 @@ public static int factorial1(int num){
 - 함수는 내부적으로 스택처럼 관리된다.
 
 [https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcK6Xmv%2FbtqJWsEWi8H%2Fe1VeWZuLucF0sNjk83zFVk%2Fimg.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcK6Xmv%2FbtqJWsEWi8H%2Fe1VeWZuLucF0sNjk83zFVk%2Fimg.png)
+
+### 피보나치 수열 구하기
+
+```java
+public static int Fibonacci(int n)
+	{
+		if(n<=2){
+			return n;
+		}
+		else 
+			return Fibonacci(n - 1) + Fibonacci(n - 2);
+	}
+```
