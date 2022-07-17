@@ -67,3 +67,35 @@ public static void coin(int[] arr, int total) {
     - 각 물건은 무게(w)와 가치(v)로 표현될 수 있음
     - 물건은 쪼갤 수 있으므로 물건의 일부분이 배낭에 넣어질 수 있음, 그래서 Fractional Knapsack Problem 으로 부름
     - Fractional Knapsack Problem 의 반대로 물건을 쪼개서 넣을 수 없는 배낭 문제도 존재함 ( 0/1 Knapsack Problem) 으로 부름
+
+```java
+public static void fractionalKnapsack(int[][] arr, int capacity) {
+
+        float total_value = 0;
+
+        List<Object> result = new ArrayList<>();
+
+        for (int i = 0; i < arr.length; i++) {
+            Map<Object, Object> combi = new HashMap<>();
+            // capacity 의 값이 0보다 클 때까지만 실행
+            if (capacity > 0) {
+                if (capacity - arr[i][0] >= 0) {
+                    capacity -= arr[i][0];
+                    total_value += arr[i][1];
+                    combi.put(arr[i][0], 1);
+                } else {
+                    // 부분만 배낭에 넣을 수 있으므로 쪼개서 넣음
+                    double fraction = (double) capacity / (double) arr[i][0];
+                    capacity -= arr[i][0];
+                    total_value += arr[i][1] * fraction;
+                    combi.put(arr[i][0], fraction);
+                }
+            }
+            result.add(combi);
+        }
+
+        System.out.println(result.toString());
+        System.out.println(total_value);
+
+    }
+```
