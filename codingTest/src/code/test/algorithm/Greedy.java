@@ -11,7 +11,7 @@ public class Greedy {
 
         //coin(arr, 4720);
 
-        int[][] arr2 = {{10,10},{15,12},{20,10},{25,8},{30,5}};
+        int[][] arr2 = {{10, 10}, {15, 12}, {20, 10}, {25, 8}, {30, 5}};
 
         fractionalKnapsack(arr2, 30);
     }
@@ -33,31 +33,34 @@ public class Greedy {
         }
 
         System.out.println(result.toString());
-        System.out.println("동전의 개수 :   "+total_coin_cnt);
+        System.out.println("동전의 개수 :   " + total_coin_cnt);
     }
 
-    public static void fractionalKnapsack(int[][] arr, int capacity){
+    public static void fractionalKnapsack(int[][] arr, int capacity) {
 
-        float total_value =0;
+        float total_value = 0;
 
         List<Object> result = new ArrayList<>();
 
-        for(int i=0; i<arr.length; i++){
+        for (int i = 0; i < arr.length; i++) {
             Map<Object, Object> combi = new HashMap<>();
-            if(capacity-arr[i][0]>=0){
-                capacity-=arr[i][0];
-                total_value+=arr[i][1];
-                combi.put(arr[i][0],1);
-            }else{
-                double fraction =  (double)capacity / (double)arr[i][0];
-                System.out.println(fraction);
-                total_value += arr[i][1] * fraction;
-                combi.put(arr[i][0],fraction);
+            // capacity 의 값이 0보다 클 때까지만 실행
+            if (capacity > 0) {
+                if (capacity - arr[i][0] >= 0) {
+                    capacity -= arr[i][0];
+                    total_value += arr[i][1];
+                    combi.put(arr[i][0], 1);
+                } else {
+                    // 부분만 배낭에 넣을 수 있으므로 쪼개서 넣음
+                    double fraction = (double) capacity / (double) arr[i][0];
+                    capacity -= arr[i][0];
+                    total_value += arr[i][1] * fraction;
+                    combi.put(arr[i][0], fraction);
+                }
             }
             result.add(combi);
         }
 
-        // 20, 10  5, 22
         System.out.println(result.toString());
         System.out.println(total_value);
 
