@@ -18,8 +18,6 @@ public class queue {
         queue.offer("item3");
 
 
-
-
         // for 문으로 출력
         for(String a :queue){
             System.out.println(a);
