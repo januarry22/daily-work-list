@@ -1,4 +1,4 @@
-package code.test.baekjoon;
+package code.test.baekjoon.silver;
 
 import java.io.IOException;
 import java.util.Arrays;
