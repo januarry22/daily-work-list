@@ -19,7 +19,6 @@ public class lessons12951 {
                 answer+=first.replace(first.charAt(0), Character.toUpperCase(ch))+" ";
             }
         }
-
         System.out.println("answer ::" + answer.stripTrailing());
     }
 
