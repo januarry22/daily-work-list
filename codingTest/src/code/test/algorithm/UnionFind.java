@@ -47,5 +47,4 @@ public class UnionFind {
         System.out.println("1과 4은 연결되어 있나요? " + isSameParent(1, 4));
     }
 
-
 }
