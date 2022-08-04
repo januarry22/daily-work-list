@@ -1,5 +1,8 @@
 package code.test.programmers;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import java.util.Arrays;
 
 /*
@@ -8,7 +11,11 @@ import java.util.Arrays;
 public class lessons1845 {
 
     public static void main(String[] args){
-        int nums[] = {3, 3, 3, 2, 2, 2};
+
+    }
+
+
+    public static int solution(int[] nums) {
         int answer = 0;
 
         int K = nums.length / 2; // 3
@@ -16,9 +23,17 @@ public class lessons1845 {
 
         if(result.length <= K){
             System.out.println(result.length);
+           return result.length;
         }else{
             System.out.println(K);
+           return K;
         }
+    }
 
+
+
+    @Test
+    public void 정답() {
+        Assert.assertEquals(2, solution(new int[]{3, 1, 2, 3}));
     }
 }
