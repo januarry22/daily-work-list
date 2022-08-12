@@ -11,20 +11,22 @@ public class lessons12935 {
         int[] arr = {4, 3, 2, 1};
         int[] answer;
 
-        Arrays.sort(arr);
 
-        if (arr.length > 1) {
-            answer = new int[arr.length-1];
-
-            for (int i = arr.length-1; i >= 1; i--) {
-                answer[arr.length-i-1] = arr[i];
-            }
-
-        } else {
+        if (arr.length == 1) {
             answer = new int[]{-1};
         }
+        int min = Integer.MAX_VALUE;
+        for(int a : arr) {
+            if(min > a) min = a;
+        }
 
-        System.out.println(Arrays.toString(answer));
+        int[] newArr = new int[arr.length-1];
+        int index = 0;
+        for(int a : arr) {
+            if(min != a) newArr[index++] = a;
+        }
+
+        System.out.println(Arrays.toString(newArr));
     }
 
 }
