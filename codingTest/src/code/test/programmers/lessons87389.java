@@ -16,12 +16,7 @@ public class lessons87389 {
                break;
            }
        }
-        for (int i=3; i<=n; i++){
-            if(n%i==1){
-                System.out.println(i);
-                break;
-            }
-        }
+
     }
 
 }
