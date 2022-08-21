@@ -17,10 +17,7 @@ public class lessons43165 {
 
 
     public static void dfs(int depth, String now, String path, String[][] tickets) {
-        if (depth == tickets.length) {
-            list.add(path);
-            return;
-        }
+
 
         for (int i = 0; i < tickets.length; i++) {
             if (!visit[i] && now.equals(tickets[i][0])) {
