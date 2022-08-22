@@ -13,6 +13,8 @@ public class lessons43165 {
 
     public static void main(String[] args) {
 
+        dfs(0, "ICN", "ICN", tickets);
+
     }
 
 
