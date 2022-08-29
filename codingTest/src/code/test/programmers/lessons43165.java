@@ -20,7 +20,10 @@ public class lessons43165 {
 
     public static void dfs(int depth, String now, String path, int[] tickets) {
 
-
+        if (depth == tickets.length) {
+            list.add(path);
+            return;
+        }
 
     }
 
