@@ -25,11 +25,11 @@ public class lessons49189 {
 
         System.out.print( index + "->");
 
-//        for (int node : vertex[index]) {
-//            if (!vistied[node]) {
-//                dfs(node);
-//            }
-//        }
+        for (int node : vertex[index]) {
+            if (!vistied[node]) {
+                dfs(node);
+            }
+        }
 
     }
 
