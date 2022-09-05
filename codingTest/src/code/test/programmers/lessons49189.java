@@ -22,8 +22,6 @@ public class lessons49189 {
 
         // 시작노드는 방문처리
         vistied[index] = true;
-        vistied[index] = true;
-
 
         System.out.print( index + "->");
 
