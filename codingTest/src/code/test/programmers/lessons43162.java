@@ -24,6 +24,7 @@ public class lessons43162 {
 //            }
 //        }
 
+        System.out.println(answer);
         for (int i = 0; i < n; i++) {
             if (visit[i] == 0) {
                 answer++;
@@ -31,6 +32,7 @@ public class lessons43162 {
             }
         }
 
+        System.out.println(answer);
         System.out.println(answer);
     }
 
