@@ -32,8 +32,6 @@ public class lessons43162 {
             }
         }
 
-        System.out.println(answer);
-        System.out.println(answer);
     }
 
     public static void bfs(int n, int node, int[][] computers) {
