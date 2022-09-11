@@ -17,14 +17,6 @@ public class lessons43162 {
         int n = 3;
         visit = new int[n];
 
-//        for (int i = 0; i < n; i++) {
-//            if (visit[i] == 0) {
-//                answer++;
-//                bfs(n, i, computers);
-//            }
-//        }
-
-        System.out.println(answer);
         for (int i = 0; i < n; i++) {
             if (visit[i] == 0) {
                 answer++;
