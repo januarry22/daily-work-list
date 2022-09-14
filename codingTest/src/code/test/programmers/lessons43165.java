@@ -12,9 +12,8 @@ public class lessons43165 {
     public static int target= 3;
 
     public static void main(String[] args) {
+        dfs(numbers, target , 0 , 0)
 
-
-        System.out.println(dfs(numbers, target , 0 , 0));
 
     }
 
