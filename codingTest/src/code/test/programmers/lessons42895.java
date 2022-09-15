@@ -22,6 +22,11 @@ public class lessons42895 {
             answer = -1;
             return;
         }
+        if(prev==number){
+            answer =  Math.min(answer, cnt);
+            return;
+        }
+        int tempN = n;
     }
 
 }
