@@ -7,7 +7,7 @@ import java.util.*;
  * */
 public class lessons43164 {
     public static boolean[] visit;
-    static ArrayList<String> list = new ArrayList<>();
+    public static ArrayList<String> list = new ArrayList<>();
     public static String[][] tickets = {{"ICN", "JFK"}, {"HND", "IAD"}, {"JFK", "HND"}};
 
     public static void main(String[] args) {
