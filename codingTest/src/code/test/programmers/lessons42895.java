@@ -27,6 +27,15 @@ public class lessons42895 {
             return;
         }
         int tempN = n;
+        for (int i = 0; i < 8 - cnt; i++) {
+            int newCount = cnt + i + 1;
+            dfs(n, number, newCount, prev + tempN);
+            dfs(n, number, newCount, prev - tempN);
+            dfs(n, number, newCount, prev / tempN);
+            dfs(n, number, newCount, prev * tempN);
+
+            tempN = tempN * 10 + n;
+        }
     }
 
 }
