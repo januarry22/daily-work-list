@@ -10,8 +10,7 @@ public class UnionFind {
     public static int find(int x) {
         if (x == parent[x])
             return x;
-        else
-            return parent[x] = find(parent[x]);
+       return find(parent[x]);
     }
 
     // 두 개별 집합을 하나로 합침
