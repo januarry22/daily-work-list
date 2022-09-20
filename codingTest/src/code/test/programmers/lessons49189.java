@@ -1,35 +1,57 @@
 package code.test.programmers;
 
-import java.util.Arrays;
-import java.util.Stack;
+import java.util.*;
 
 /*
-* [프로그래머스] - 가장 먼 노드
+ * [프로그래머스] - 가장 먼 노드
  * */
 public class lessons49189 {
 
-    static boolean[] vistied = new boolean[6];
-    public static int[][] vertex = {{3, 6}, {4, 3}, {3, 2}, {1, 3}, {1, 2}, {2, 4}, {5, 2}};
-    public static int n = 6;
+    static boolean[] vistied;
+
+    public static void main(String[] args) {
+        int[][] edge = {{3, 6}, {4, 3}, {3, 2}, {1, 3}, {1, 2}, {2, 4}, {5, 2}};
+        int n = 6;
 
 
-    public static void main(String[] args){
-
-        dfs(1);
+        System.out.println(solution(n, edge));
     }
 
-    static void dfs(int index) {
+    static int solution(int n, int[][] edge) {
+        vistied = new boolean[n];
 
-        // 시작노드는 방문처리
-        vistied[index] = true;
+        HashSet<Integer> set = new HashSet<>();
+        Queue<Integer> queue = new LinkedList<>();
 
-        System.out.print( index + "->");
+        queue.add(1);
+        set.add(1);
 
-        for (int node : vertex[index]) {
-            if (!vistied[node]) {
-                dfs(node);
+        int cnt = 1;
+
+        while (!queue.isEmpty()) {
+            cnt = queue.size();
+
+            for (int i = 0; i < cnt; i++) {
+                int peek = queue.poll();
+
+                for (int j = 0; j < edge.length; j++) {
+                    if (edge[j][0] == peek && !set.contains(edge[j][1])) {
+                        set.add(edge[j][1]);
+                        queue.add(edge[j][1]);
+                    }
+                    if (edge[j][1] == peek && !set.contains(edge[j][0])) {
+                        set.add(edge[j][0]);
+                        queue.add(edge[j][0]);
+                    }
+                }
             }
+            System.out.println(queue);
+            System.out.println(set);
         }
+
+
+
+        return cnt;
 
     }
 
