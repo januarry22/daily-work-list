@@ -20,7 +20,7 @@ public class lessons84021 {
 
     static int solution(int[][] game_board, int[][] table) {
 
-        return 0;
+        return -1;
 
     }
 
