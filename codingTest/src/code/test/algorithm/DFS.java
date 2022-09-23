@@ -31,7 +31,7 @@ public class DFS {
         // 시작노드는 방문처리
         vistied[index] = true;
 
-          System.out.print( index + "->");
+        System.out.print( index + "->");
 
         for (int node : graph[index]) {
             if (!vistied[node]) {
