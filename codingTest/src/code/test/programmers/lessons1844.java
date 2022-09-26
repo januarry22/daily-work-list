@@ -21,8 +21,6 @@ public class lessons1844 {
         };
 
         System.out.println(solution(maps));
-
-        System.out.println(solution(maps));
     }
 
 
