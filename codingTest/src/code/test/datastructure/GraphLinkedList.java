@@ -1,54 +1,53 @@
 package code.test.datastructure;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 /*
  * JAVA - 그래프 구현
  * */
 public class GraphLinkedList {
 
-    /* 인접 행렬 */
-    private int[][] array;
+    /* 연결리스트  */
+    private ArrayList<ArrayList<Integer>> listGraph;
 
     public GraphLinkedList(int size) {
-        //array = new int[size][size];
+        listGraph = new ArrayList<ArrayList<Integer>>();
 
-        /* 정점의 숫자와 같은 index 에 위치*/
-        array = new int[size + 1][size + 1];
+        for(int i=0; i<size +1; i++){
+            listGraph.add(new ArrayList<Integer>());
+        }
     }
 
-    public int[][] getArray() {
-        return array;
+    public ArrayList<ArrayList<Integer>> getArray() {
+        return listGraph;
     }
 
-    public boolean isEmpty() {
-        return array == null;
+    /* 연결리스트로 정점 (vertex) 추가(삭제) 가 */
+    public void addVertex(int x){
+        listGraph.add(new ArrayList<Integer>());
     }
 
     /* 단방향 연결
-     *   1 : 연결
-     *   0 : 비연결
+     *   x -> y
      * */
     public void addDiretedEdge(int x, int y) {
-        array[x][y] = 1;
+       listGraph.get(x).add(y);
     }
 
-    public void removeDiretedEdge(int x, int y) {
-        array[x][y] = 0;
-    }
-
+    /* 양방향 연결
+    * x <-> y
+    * */
     public void addCompleteEdge(int x, int y) {
-        array[x][y] = 1;
-        array[y][x] = 1;
-    }
-
-    public void removeCompleteEdge(int x, int y) {
-        array[x][y] = 0;
-        array[y][x] = 0;
+        listGraph.get(x).add(y);
+        listGraph.get(y).add(x);
     }
 
     public void print() {
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
-                System.out.print(array[i][j]+" ");
+        for (int i = 1; i < listGraph.size(); i++) {
+            System.out.print("정점(vertex) "+i+"-> ");
+            for (int j = 0; j < listGraph.get(i).size(); j++) {
+                System.out.print(" "+listGraph.get(i).get(j));
             }
             System.out.println();
         }
@@ -56,24 +55,19 @@ public class GraphLinkedList {
 
     public static void main(String[] args) {
 
-        GraphLinkedList array = new GraphLinkedList(5);
+        GraphLinkedList graph = new GraphLinkedList(5);
 
-        array.addCompleteEdge(1, 2);
-        array.addCompleteEdge(1, 3);
-        array.addDiretedEdge(1,5);
+        graph.addVertex(6);
 
-        array.addCompleteEdge(3, 4);
-        array.addCompleteEdge(3, 5);
+        graph.addCompleteEdge(1, 2);
+        graph.addCompleteEdge(1, 3);
+        graph.addDiretedEdge(1,5);
 
-        array.print();
-        /*
-        0 0 0 0 0 0
-        0 0 1 1 0 1
-        0 1 0 0 0 0
-        0 1 0 0 1 1
-        0 0 0 1 0 0
-        0 0 0 1 0 0
-         */
+        graph.addCompleteEdge(3, 4);
+        graph.addCompleteEdge(3, 5);
+
+        graph.print();
+
     }
 
 }
