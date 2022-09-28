@@ -51,6 +51,7 @@ public class DFS {
         vistied[1] = true;
 
         while (!stack.isEmpty()) {
+            System.out.println(stack);
             int index = stack.pop();
             System.out.print(index + "->");
             for (int linked : graph[index]) {

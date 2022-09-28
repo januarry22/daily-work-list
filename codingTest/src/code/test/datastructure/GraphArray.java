@@ -1,9 +1,12 @@
 package code.test.datastructure;
 
+import java.util.Stack;
+
 /*
  * JAVA - 그래프 구현
  * */
 public class GraphArray {
+
 
     /* 인접 행렬 */
     private int[][] array;
@@ -54,6 +57,28 @@ public class GraphArray {
         }
     }
 
+    static void dfsStack(int[][] graph) {
+        boolean[] vistied = new boolean[9];
+        Stack<Integer> stack = new Stack<>();
+
+        stack.push(1);
+        // 시작노드는 방문처리
+        vistied[1] = true;
+
+        while (!stack.isEmpty()) {
+            System.out.println(stack);
+            int index = stack.pop();
+            System.out.print(index + "->");
+            for (int linked : graph[index]) {
+                // 방문처리
+                if (!vistied[linked]) {
+                    stack.push(linked);
+                    vistied[linked] = true;
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) {
 
         GraphArray array = new GraphArray(5);
@@ -66,6 +91,7 @@ public class GraphArray {
         array.addCompleteEdge(3, 5);
 
         array.print();
+
         /*
         0 0 0 0 0 0
         0 0 1 1 0 1
@@ -75,5 +101,4 @@ public class GraphArray {
         0 0 0 1 0 0
          */
     }
-
 }
