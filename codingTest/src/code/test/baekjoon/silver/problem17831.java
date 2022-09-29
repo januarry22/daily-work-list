@@ -1,13 +1,13 @@
-package code.test.baekjoon;
+package code.test.baekjoon.silver;
 
 import java.io.*;
-import java.util.*;
+import java.util.Vector;
 
 /*
- * 백준 - 스택 수열
+ * 백준 - 대기업 승범이네
  *
  * */
-public class problem1949 {
+public class problem17831 {
     static int N;
     static int[] person;
     static int[][] dp;
