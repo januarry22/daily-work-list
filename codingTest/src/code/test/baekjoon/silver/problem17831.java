@@ -50,14 +50,6 @@ public class problem17831 {
 
     public static void dfs(int n, int parent) {
 
-        for (int node : v[n]) {
-            if (node != parent) {
-                dfs(node, n);
 
-                dp[n][0] += Math.max(dp[node][0], dp[node][1]);
-                dp[n][1] += dp[node][0];
-            }
-        }
-        dp[n][1] += person[n];
     }
 }
