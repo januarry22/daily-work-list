@@ -55,3 +55,42 @@ public class queue {
 }
 
 ```
+
+## 우선 순위 큐 (Priority Queue)
+
+- 높은 우선순위의 요소를 먼저 꺼내서 처리하는 구조
+- 내부요소는 힙으로 구성되어 이진트리 구조
+- 시간복잡도 O(NlogN)
+- 우선순위 중요시 처리되어야 할때 사용
+
+```java
+public static void main(String[] args){
+        // 우선순위
+        PriorityQueue<Integer> queue = new PriorityQueue<>();
+        PriorityQueue<Integer> reverseQueue = new PriorityQueue<>(Comparator.reverseOrder());
+
+        queue.add(1);
+        queue.add(89);
+        queue.offer(23);
+
+        for(int a :queue){
+            System.out.println(a);
+        }
+
+        // 첫번째 값 반환하고 제거
+        queue.poll();
+
+        // 첫번째 값 반환, 비어있으면 null
+        queue.peek();
+
+        // 첫번째 값 반환, 비어있으면 error
+        queue.element();
+
+        // 삭제
+        queue.remove(89);
+
+        // 초기화
+        queue.clear();
+
+    }
+```
