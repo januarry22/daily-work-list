@@ -20,6 +20,9 @@ public class lessons84021 {
 
     static int solution(int[][] game_board, int[][] table) {
 
+        for(int[] arr : game_board){
+
+        }
         return -1;
 
     }
