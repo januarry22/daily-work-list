@@ -22,6 +22,8 @@ public class lessons84021 {
 
         for(int[] arr : game_board){
 
+
+            System.out.println(solution(game_board , table));
         }
         return -1;
 
