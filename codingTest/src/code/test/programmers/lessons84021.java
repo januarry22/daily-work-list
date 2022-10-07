@@ -24,6 +24,8 @@ public class lessons84021 {
 
 
             System.out.println(solution(game_board , table));
+
+            System.out.println(solution(game_board , table));
         }
         return -1;
 
