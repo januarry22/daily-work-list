@@ -23,6 +23,9 @@ public class lessons84021 {
         int a = game_board.length;
         for(int[] arr : game_board){
 
+            for(int b : arr){
+
+            }
             System.out.println();
 
 
