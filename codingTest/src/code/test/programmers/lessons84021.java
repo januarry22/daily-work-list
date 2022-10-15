@@ -25,8 +25,8 @@ public class lessons84021 {
 
             for(int b : arr){
 
+                System.out.println();
             }
-            System.out.println();
 
 
         }
