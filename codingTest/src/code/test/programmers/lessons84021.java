@@ -26,6 +26,10 @@ public class lessons84021 {
             for(int b : arr){
 
                 System.out.println(b);
+
+                System.out.println(b);
+
+                System.out.println(b);
             }
 
 
