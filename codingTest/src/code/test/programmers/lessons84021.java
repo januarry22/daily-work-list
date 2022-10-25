@@ -20,15 +20,6 @@ public class lessons84021 {
 
     static int solution(int[][] game_board, int[][] table) {
 
-        int a = game_board.length;
-        for(int[] arr : game_board){
-
-            for(int b : arr){
-
-            }
-
-
-        }
 
 
         return 1;
