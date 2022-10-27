@@ -16,14 +16,9 @@ public class lessons12939 {
     }
 
     public static String solution (String s) {
-        String answer ="";
-
         int[] a = Stream.of(s.split(" ")).mapToInt(Integer::parseInt).toArray();
-
         Arrays.sort(a);
 
-        answer = a[0] +" "+a[a.length-1];
-
-        return answer;
+        return a[0] +" "+a[a.length-1];
     }
 }
