@@ -13,6 +13,8 @@ public class lessons12939 {
 
         String s = "-1 -2 -3 -4";
         System.out.println(solution(s));
+        System.out.println(solution(s));
+        System.out.println(solution(s));
     }
 
     public static String solution (String s) {
