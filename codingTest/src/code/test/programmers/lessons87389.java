@@ -13,7 +13,6 @@ public class lessons87389 {
        for (int i=3; i<=n; i++){
            if(n%i==1){
                System.out.println(i);
-               System.out.println(i);
                break;
            }
        }
