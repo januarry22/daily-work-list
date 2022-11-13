@@ -35,7 +35,6 @@ public class lessons92334 {
 
             List fromsignedList = (List) resultMap.get(toSign);
             fromsignedList.add(fromSign);
-            System.out.print("fromsignedList"+resultMap+"\n");
 
             if(fromsignedList.contains(fromSign)){
                 int i=0;
