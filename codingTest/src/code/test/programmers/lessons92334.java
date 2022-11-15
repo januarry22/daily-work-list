@@ -14,7 +14,7 @@ public class lessons92334 {
     public static void main(String[] args){
         int[] isCheck = solution(id_list,report,k);
         for(int j : isCheck){
-            System.out.print("isCheck"+j);
+            System.out.print(j);
         }
     }
 
