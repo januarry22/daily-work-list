@@ -141,7 +141,7 @@ public static void main(String[] args) {
 
 **Java 에서 제공 하는 함수형 인터페이스** 
 
-| 종류 | 매개값 | 리턴값 | 메서트 형태 |
+| 종류 | 매개값 | 리턴값 | 메소드 형태 |
 | --- | --- | --- | --- |
 | Supplier<T> | X | O | void accept(T t) |
 | Consumer<T> | O | X | T get() |
