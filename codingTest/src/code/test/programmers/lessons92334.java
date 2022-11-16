@@ -43,15 +43,7 @@ public class lessons92334 {
             }
         }
 
-        System.out.print("toSign"+longMap+"\n");
-//        int j=0;
         int[] result = new int[id_list.length];
-//        for(int j=0; j<result.length;j++){
-//            List fromsigned =  (List)resultMap.get(id_list[i]);
-//
-//            longMap.put(id_list[i],j);
-//        }
-
         return result;
 
     }
