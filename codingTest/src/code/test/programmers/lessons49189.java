@@ -45,8 +45,6 @@ public class lessons49189 {
                     }
                 }
             }
-            System.out.println(queue);
-            System.out.println(set);
         }
 
 
