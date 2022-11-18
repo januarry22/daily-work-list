@@ -14,6 +14,7 @@ public class lessons86051 {
     public static void main(String[] args){
         int anwer = solution(numbers);
         System.out.print(anwer);
+        System.out.print(anwer);
     }
 
     public static int solution(int[] numbers) {
