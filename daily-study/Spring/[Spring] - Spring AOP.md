@@ -1,10 +1,5 @@
 # [Spring] - Spring AOP
 
-<dependency>
-<groupId>org.springframework.boot</groupId>
-<artifactId>spring-boot-starter-aop</artifactId>
-</dependency>
-
 ## 1. Spring AOP 란 ?
 
 - AOP(**Aspect Oriented Programming)의 약자로 관점 지향 프로그래밍을 의미**
