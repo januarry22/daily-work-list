@@ -140,6 +140,31 @@ public String httpURLCon(String url) throws IOException, ClientProtocolException
 
 				return jsonInString;
 }
+
+// Multipart 파일
+public String sendMultiPartRequest(String url, MultiValueMap<String, Object> body , HttpMethod method){
+        String jsonInString = "";
+
+        HttpHeaders header = new HttpHeaders();
+        header.setContentType(MediaType.MULTIPART_FORM_DATA);
+
+        HttpComponentsClientHttpRequestFactory factory = new HttpComponentsClientHttpRequestFactory();
+        RestTemplate restTemplate = new RestTemplate(factory);
+
+        UriComponents uri = UriComponentsBuilder.fromHttpUrl(url).build();
+
+        HttpEntity<MultiValueMap<String, Object>> entity = new HttpEntity<>(body, header);
+        ResponseEntity<String> responseMap = restTemplate.exchange(uri.toString(),method, entity, String.class);
+      
+
+        result.put("statusCode", responseMap.getStatusCode()); //http status code를 확인
+        result.put("header", responseMap.getHeaders()); //헤더 정보 확인
+        result.put("body", responseMap.getBody()); //실제 데이터 정보 확인
+
+        String str = responseMap.getBody().toString();
+      
+        return str;
+    }
 ```
 
 - 다른 Object로 리턴할 경우 예외처리가 필요함
