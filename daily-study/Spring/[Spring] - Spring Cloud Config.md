@@ -35,6 +35,8 @@
 
 ## 4. Spring Cloud Config 구현
 
+**[Spring Cloud Config Server]**
+
 1. **설정 파일 저장소 세팅**
 
 `{앱이름}-{프로파일}.yml` 의 구조로 **[git 에 저장소](https://github.com/januarry22/spring-config-cloud/blob/main/local/webflux-local.yml)**를 생성 한다.
@@ -70,7 +72,23 @@ spring:
 - default-label : 깃 주소의 브랜치 이름
 - search-paths : 설정 파일들을 찾을 경로
 
-- **Maven 사용 시엔 pom.xml**
+**Dependency 추가**
+
+- Gradle 사용 시 build.gradle
+    
+    ```yaml
+    dependencies {
+    		...
+    
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+    
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+        implementation 'org.springframework.cloud:spring-cloud-config-server'
+    }
+    ```
+    
+- Maven 사용 시 pom.xml
     
     ```java
     <parent>
@@ -159,3 +177,93 @@ public class RunWebFluxApplication {
 	]
 }
 ```
+
+**[Spring Cloud Config Client]**
+
+1. 클라이언트 서버 구성
+
+**Dependency 추가**
+
+- Gradle 사용 시 build.gradle
+    
+    ```yaml
+    dependencies {
+    		...
+    
+        compileOnly 'org.projectlombok:lombok'
+        annotationProcessor 'org.projectlombok:lombok'
+    
+        testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    	  implementation 'org.springframework.cloud:spring-cloud-starter-config'
+    }
+    ```
+    
+- Maven 사용 시 pom.xml 
+****
+
+2. 설정 정보 읽어올 수 있게 코드 추가 
+
+**application.yml 작성**
+
+```yaml
+spring:
+  application:
+    name: config
+  profiles:
+    active: kr-local
+  config:
+    import: optional:configserver:http://localhost:8888
+```
+
+**MainClass** `@EnableConfigurationProperties` **어노테이션 추가**
+
+```java
+@EnableConfigurationProperties(ConfigProperties.class)
+@SpringBootApplication
+public class RunWebFluxApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(RunWebFluxApplication.class, args);
+	}
+
+}
+```
+
+**설정 정보를 읽어올 Preperties 클래스 추가**
+
+```java
+
+@Setter
+@Getter
+@ConfigurationProperties("com.januarry22")
+@RefreshScope
+@ToString
+public class ConfigProperties {
+
+		private String profile;
+    private String region;
+}
+```
+
+- @RefreshScope 가 설정정보가 변경되면 정보를 다시 불러올 수 있도록 해줌
+
+**Controller 추가**
+
+```java
+@RestController
+@RequiredArgsConstructor
+public class ConfigClientController {
+    
+		private final ConfigProperties configProperties;
+
+    @GetMapping("/config")
+    public ResponseEntity<String> config() {
+        System.out.println(configProperties);
+        return ResponseEntity.ok(configProperties.toString());
+    }
+}
+```
+
+1. 클라이언트 실행 및 확인
+
+클라이언트 서버를 정상적으로 호출하는지 확인
