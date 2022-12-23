@@ -267,3 +267,70 @@ public class ConfigClientController {
 1. 클라이언트 실행 및 확인
 
 클라이언트 서버를 정상적으로 호출하는지 확인
+
+## 3. Private 레포지토리 SSL연결
+
+1. **설정 서버에서 비대칭 키 생성하기** 
+
+**설정 서버에 비대칭키 생성하기**
+
+```bash
+ssh-keygen -m PEM -t rsa -b 4096
+```
+
+**생성한 public key를 deploy key에 등록하기**
+
+- 생성된 비대칭키 확인
+
+```bash
+cat ~/.ssh/id_rsa.pub
+```
+
+- **git 에 생성된 설정파일 레퍼지토리의 setting > Security > Deploy keys**
+    - Add deploy key > key 이름, 위에서 생성된 비대칭키 내용을 입력
+
+1. **설정서버의 application.yml수정**
+
+```yaml
+server:
+  port: 8888
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/januarry22/spring-config-cloud.git
+          search-paths: webflux/**
+          default-label: main
+          ignoreLocalSshSettings: true
+          strictHostKeyChecking: false
+          hostKey: hostKey // hostKey를 base64 인코딩한 값
+          hostKeyAlgorithm: ssh-rsa // 비대칭키 생성 알고리즘
+          privateKey: | // | 빠뜨리면 안됨
+              -----BEGIN RSA PRIVATE KEY-----
+								...
+              -----END RSA PRIVATE KEY-----
+            passphrase: test // 비대칭키 생성 시 입력한 값
+```
+
+- hostKey
+
+설정 서버에서 ssh-keyscan으로 찾은 값을 base64 인코딩
+
+```bash
+ssh-keyscan -t ssh-rsa github.com
+```
+
+- privateKey
+
+다음 명령어를 실행하여 출력되는 개인키 입력
+
+```bash
+cat ~/.ssh/id_rsa
+```
+
+- passphrase
+
+비대칭 키 생성시 입력한 값
