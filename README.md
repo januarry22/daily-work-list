@@ -18,7 +18,7 @@
 - [Ubuntu18 에 Mysql DB 설치하기 (1)](https://github.com/januarry22/daily-work-list/blob/main/daily-study/DB/Ubuntu18%20%EC%97%90%20Mysql%20DB%20%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0%20(1).md)
 - [Ubuntu18 에 Mysql DB 설치하기 (2)](https://github.com/januarry22/daily-work-list/blob/main/daily-study/DB/Ubuntu18%20%EC%97%90%20Mysql%20DB%20%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0%20(2).md)
 - [[DB] 트랜잭션 (Transaction)](https://github.com/januarry22/daily-work-list/blob/main/daily-study/DB/%5BDB%5D%20%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%20(Transaction).md)
-- [DB] ㅇㅣㅈㅜㅇㅎㅗㅏ HA OPS RAC
+- [DB] Oracle HA OPS RAC
 
 ---
 
