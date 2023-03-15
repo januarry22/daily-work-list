@@ -17,8 +17,8 @@
 - [Mysql 이모티콘 저장하기](https://github.com/januarry22/daily-work-list/blob/main/daily-study/DB/Mysql%20%EC%9D%B4%EB%AA%A8%ED%8B%B0%EC%BD%98%20%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0.md)
 - [Ubuntu18 에 Mysql DB 설치하기 (1)](https://github.com/januarry22/daily-work-list/blob/main/daily-study/DB/Ubuntu18%20%EC%97%90%20Mysql%20DB%20%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0%20(1).md)
 - [Ubuntu18 에 Mysql DB 설치하기 (2)](https://github.com/januarry22/daily-work-list/blob/main/daily-study/DB/Ubuntu18%20%EC%97%90%20Mysql%20DB%20%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0%20(2).md)
-- [트랜잭션 (Transaction)] (https://github.com/januarry22/daily-work-list/blob/main/daily-study/DB/%5BDB%5D%20%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%20(Transaction).md)
-- [Oracle DB 이중화] (https://github.com/januarry22/daily-work-list/blob/main/daily-study/DB/%5BDB%5D%20Oracle%20DB%20%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%AE%E1%86%BC%E1%84%92%E1%85%AA.md) 
+- [트랜잭션 (Transaction)](https://github.com/januarry22/daily-work-list/blob/main/daily-study/DB/%5BDB%5D%20%ED%8A%B8%EB%9E%9C%EC%9E%AD%EC%85%98%20(Transaction).md)
+- [Oracle DB 이중화](https://github.com/januarry22/daily-work-list/blob/main/daily-study/DB/%5BDB%5D%20Oracle%20DB%20%E1%84%8B%E1%85%B5%E1%84%8C%E1%85%AE%E1%86%BC%E1%84%92%E1%85%AA.md) 
 
 ---
 
